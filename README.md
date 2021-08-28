@@ -1,57 +1,34 @@
-# I've joined the #100DaysOfCode Challenge
+# Je m'inscris au défi des #100JoursDeCode.
 
-## Contents
-
-* [Rules](rules.md)
-* [Log - click here to see my progress](log.md)
-* [FAQ](FAQ.md)
-* [Resources](resources.md)
+## Contenu
+* [Règles](regles.md)
+* [Log - cliquez ici pour voir ma progression](log.md)
+* [FAQ](FAQ-fr.md)
+* [Ressources](resources-fr.md)
 
 ## Translations
-[বাংলা](intl/bn/README.md) - [català](intl/ca/README.md) - [中文](intl/ch/README.md) - [deutsch](intl/de/README.md) - [español](intl/es/README.md) – [français](intl/fr/FAQ-fr.md) – [italiano](intl/it/README.md) – [日本語](intl/ja/README.md) - [한국어](intl/ko/README-ko.md) – [nederlands](intl/nl/README.md) – [norsk](intl/no/README.md) –  [polski](intl/pl/README.md) - [português do Brasil](intl/pt-br/LEIAME.md) - [русский](intl/ru/README-ru.md) – [українська](intl/ua/README-ua.md) - [ελληνικά](intl/el/README.md) - [srpski](intl/sr/README-sr.md)
-
-If you want to help by providing a translation of content/rules in the language you know, submit a pull request (or DM me on Twitter @ka11away), adding a sub-folder in the 'intl' folder with the files of the translation there.
-
-## If you've decided to join:
-
-0.  Check out [the Official Site](http://100daysofcode.com/) for the #100DaysOfCode movement. Connect with others on the platform of your choice from this list: www.100DaysOfCode.com/connect
-    Also, [here](https://www.100daysofcode.com/slack) is a invite link to the 100DaysOfCode Slack channel
-1.  Read [Join the #100DaysOfCode](https://medium.freecodecamp.com/join-the-100daysofcode-556ddb4579e4)
-2.  Fork this repo and commit to the [Log](log.md) or to the Alternative, rapid [R1 Log](r1-log.md) (R1 stands for Round 1) daily. [Example](https://github.com/Kallaway/100-days-kallaway-log).
-3.  **Code minimum an hour every day for the next 100 days.**
-4.  **Encourage at least two other people in the challenge on Twitter every day! Pay it forward!**
-5.  Change the date in [Rules](rules.md) to the day you've started the challenge.
-6.  Delete the examples in the log, or comment them out, and start filling it with your own content.
-7.  **Tweet your progress every day using the #100DaysOfCode hashtag.**
-8.  Follow [Alex, creator of #100DaysOfCode](https://twitter.com/ka11away) & [100DaysOfCode](https://twitter.com/_100DaysOfCode) Twitter Bot that retweets the tweets that contain the #100DaysOfCode hashtag. It's a great way to keep yourself motivated and to participate in the community. Thanks [@amanhimself](https://twitter.com/amanhimself) for creating it!
-9.  Important: (see No.4 above for a specific rule on this) Encourage others who are doing the same challenge on Twitter or elsewhere - by giving them props when they are posting updates on their progress, supporting them when things get difficult. Thus we will grow a community that is helpful and effective, which will lead to a higher success rate for each person involved. It's also more likely that you will stick to your own commitment, given that you will get acquainted with a couple people (or more) right away.
-10.  If you find a great, helpful resource that others would benefit from, either submit a Pull Request to add it to the repo, or just tweet at me (see info below)
-
-## ⚡ Interested in meaningfully changing your life & getting the results you want?
-
-I publish a newsletter called [Do the Opposite](https://dotheopposite.substack.com/) every other week. It's main focus is providing practical tips and techniques for improving the quality of your life - drawing from a wide variety of themes, listed below.
-
-The themes covered are:
-- **Habit Change**. Learn how to successfully acquire good habits and how to quit bad ones.
-- **Book Recommendations & Takeaways**. Get awesome book recommendations and golden nuggets of wisdom extracted from these books so you can put them into action right away!
-- **Personal Finance**. Even tiny change you make about how you manage your money will bring mind-boggling results over time. Find out what these changes are!
-- **Starting a Business**. Whether you're a wanna-be indie maker or want to become the next Elon Musk, you will find some great resources here!
-- **Overcoming Creative Blocks**. Together we explore how to beat the Resistance and finish that project you've been day-dreaming about.
-- **Minimalism** Living with less has lots of benefits: reduced stress, less cleaning, better finances and a lot more!
-- **Other topics**. Psychology, learning to code, alternative lifestyles and more.
-
-Join the Do the Opposite Community!
-
-💌 [SUBSCRIBE to the newsletter and start changing your life!](https://dotheopposite.substack.com/)
+[বাংলা](../bn/README.md) - [中文](../ch/README.md) - [deutsch](../de/README.md) - [español](../es/README.md) – [français](../fr/FAQ-fr.md) – [日本語](../ja/README.md) - [한국어](../ko/README-ko.md) – [nederlands](../nl/README.md) – [norsk](../no/README.md) –  [polski](../pl/README.md) - [português do Brasil](../pt-br/LEIAME.md) - [русский](../ru/README-ru.md) – [українська](../ua/README-ua.md) - [srpski](intl/sr/README-sr.md)
 
 
-## Want to change other habits?
+## Vous avez décidé de vous inscrire:
+0. Faites un tour sur [le site officiel](http://100daysofcode.com/) des #100JoursDeCode. Rejoignez les autres participants sur la plateforme de votre choix figurant dans cette liste: www.100DaysOfCode.com/connect En outre, vous trouverez [ici](https://www.100daysofcode.com/slack) une invitation pour le canal slack 100JoursDeCode.
+1. Lisez [Join the #100DaysOfCode](https://medium.freecodecamp.com/join-the-100daysofcode-556ddb4579e4).
+2. Forkez ce repo and faites vos commits chaque jour dans le [log](log.md) ou dans le log rapide [R1 Log](r1-log.md) (R1 veut dire Round 1). [Exemple](https://github.com/Kallaway/100-days-kallaway-log).
+3. **Codez au minimum 1 heure par jour pendant 100 jours.**
+4. **Encouragez au moins deux autres participant-e-s sur Twitter chaque jour ! Donnez ce que vous avez reçu !**
+5. Changez la date dans le fichier [Règles](regles.md) pour celle du jour où vous commencez le défi.
+6. Effacez les exemples du log, ou commentez-les pour les invisibiliser, et commencez à le remplir avec votre propre contenu.
+7. Tweetez vos progrès chaque jour en vous servant du hashtag #100JoursDeCode.
+8. A VENIR. Suivez le bot 100JoursDeCode qui republie les tweets contenant le hashtag #100JoursDeCode. C'est un excellent moyen d'entretenir votre motivation et de participer à la communauté. Merci à [@amanhimself](https://twitter.com/amanhimself) d’avoir créé la version originale en anglais!
+9. Important: (cf No.4) Encouragez les autres participants, sur Twitter ou ailleurs : en discutant avec eux quand ils postent au sujet de leurs progrès, en les soutenant quand les choses deviennent difficiles. De cette manière, nous cultiverons une communauté à la fois utile et efficace, ce qui contribuera à un taux de réussite plus important pour chaque personne impliquée. Il y a aussi plus de chance que vous vous teniez vos résolution, si vous liez connaissance avec quelques participants depuis le début.
+10. Si vous trouvez une ressource utile dont les autres pourraient bénéficier, soumettez-moi une Pull Request pour l'ajouter à ce repo, ou alors mentionnez-moi dans un tweet (cf info ci-dessous)
 
-Check out [the #100DaysOfX Challenges Project](http://100daysofx.com/). Changing your habits you are changing your life. Remember that the best time to start is always NOW.
+## Vous voulez transformer d'autres habitudes?
+Visitez the [the #100DaysOfX Challenges Project](http://100daysofx.com/). En changeant vos habitudes, vous changez votre vie. Souvenez-vous que le meilleur moment pour commencer, c'est toujours: MAINTENANT.
 
-I recommend that you commit to no more than 2-3 challenges at a time, ideally 2. If you are doing the #100DaysOfCode which involves a lot of mental activity, try the [#100DaysOfHealth](http://100daysofx.com/where-x-is/health/), or [#100DaysOfFitness](http://100daysofx.com/challenges/) challenges. There is so much more on the site, check all of them out and choose the ones you want to acquire! Languages, writing, meditation, journaling, cooking, and more!
+Je vous recommande de ne pas vous engager dans plus de 2-3 défis simultanés, idéalement, juste 2. Si vous faites le défi des the #100JoursDeCode qui nécessite beaucoup d'efforts mentaux, essayez le défi [#100DaysOfHealth](http://100daysofx.com/where-x-is/health/), ou le défi [#100DaysOfFitness](http://100daysofx.com/challenges/). Il y a de nombreux autres défis, allez les voir et choisissez ceux que vous aimeriez intégrer! Langages, écriture, méditation, journaling, cuisine, et plein d'autres!
 
 ## Note
-
-* If you have any questions or ideas about 100DaysOfCode (or other ideas), feel free to reach out to me on Twitter: [@ka11away](https://twitter.com/ka11away)
-* If you like this repo and find it useful, please consider &#9733; starring it (on top right of the page) and forking it :)
+* Si vous avez des questions ou des idées à propos des #100JoursDeCode (ou d'autres idées), sentez-vous libres de me contacter sur Twitter: [@ka11away](https://twitter.com/ka11away)
+* Si vous aimez ce repo et que vous le trouvez utile, merci d'envisager de lui accorder une étoile ★ (en haut à droite de la page) :)
+* Ce repo a été traduit par [@aurelieBayre](https://twitter.com/aurelieBayre)
