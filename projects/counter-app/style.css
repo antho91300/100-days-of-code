@@ -15,3 +15,16 @@ body {
 h1 {
     margin: 5%;
 }
+
+.btn {
+    padding: 5%;
+    border-radius: 0.5vw;
+}
+
+.up {
+    background-color: green;
+}
+
+.down {
+    background-color: red;
+}
