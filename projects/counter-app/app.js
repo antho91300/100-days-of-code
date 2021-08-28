@@ -5,6 +5,8 @@ const stepInput = document.getElementById('step')
 let count = 0
 let step = 1
 
+stepInput.value = step
+
 function displayCount() {
     countValue.innerHTML = ""
     countValue.innerHTML = count
