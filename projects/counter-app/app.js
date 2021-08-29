@@ -5,6 +5,7 @@ const stepInput = document.getElementById('step')
 const stepUp = document.getElementById('btn2-up')
 const stepDown = document.getElementById('btn2-down')
 const reset = document.getElementById('btn2-reset')
+const resetCounter = document.getElementById('btn-reset')
 let count = 0
 let step = 1
 
@@ -64,6 +65,12 @@ reset.addEventListener('click', (e) => {
     e.preventDefault()
     step = 1
     stepInput.value = step
+})
+
+resetCounter.addEventListener('click', (e) => {
+    e.preventDefault()
+    count = 0
+    displayCount()
 })
 
 displayCount()
