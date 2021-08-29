@@ -8,6 +8,50 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div class="calculator">
+        <!-- Input line -->
+        <div class="line input">
+            <div class="display">
+                <p class="operation" id="operation"></p>
+                <p class="result">= <span id="result"></span></p>
+            </div>
+
+        </div>
+        <!-- AC / CE / "+/-" / "/" line -->
+        <div class="line line-1">
+            <button class="btn btn-round red">AC</button>
+            <button class="btn btn-round">CE</button>
+            <button class="btn btn-round">+/-</button>
+            <button class="btn btn-round orange">÷</button>
+        </div>
+        <!-- 7 / 8 / 9 / X line -->
+        <div class="line line-2">
+            <button class="btn btn-round">7</button>
+            <button class="btn btn-round">8</button>
+            <button class="btn btn-round">9</button>
+            <button class="btn btn-round orange">X</button>
+        </div>
+        <!-- 4 / 5 / 6 / - line -->
+        <div class="line line-3">
+            <button class="btn btn-round">4</button>
+            <button class="btn btn-round">5</button>
+            <button class="btn btn-round">6</button>
+            <button class="btn btn-round orange">-</button>
+        </div>
+        <!-- 1 / 2 / 3 / + line -->
+        <div class="line line-4">
+            <button class="btn btn-round">1</button>
+            <button class="btn btn-round">2</button>
+            <button class="btn btn-round">3</button>
+            <button class="btn btn-round orange">+</button>
+        </div>
+        <!-- 0 / . / = line -->
+        <div class="line line-5">
+            <button class="btn btn-0">0</button>
+            <button class="btn btn-round">.</button>
+            <button class="btn btn-round orange">=</button>
+        </div>
+    </div>
     
     <script src="./app.js"></script>
 </body>
