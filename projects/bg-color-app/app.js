@@ -1,7 +1,9 @@
 const btn = document.getElementById("btn")
 const body = document.getElementById("body")
 const text = [...document.getElementsByClassName("theme")]
-const colorValue = document.getElementById("color")
+const RValue = document.getElementById("r-value")
+const GValue = document.getElementById("g-value")
+const BValue = document.getElementById("b-value")
 
 function checkLightOrDarkRGB(r, g, b) {
     // HSP (Highly Sensitive Poo) equation from http://alienryderflex.com/hsp.html
@@ -39,21 +41,42 @@ function adaptTheme(color) {
     }
 }
 
-function displayColorValue( r, g, b){
-
+function displayColorValue(color){
+    RValue.value = color[0]
+    GValue.value = color[1]
+    BValue.value = color[2]
 }
 
-function changeBackgroundColor() {
-    let color = randomRGBColor()
+function changeBackgroundColor(color) {
     let value = "rgb( " + color.join(" , ") + " )"
     body.style.backgroundColor = value
     adaptTheme(color)
-    colorValue.innerHTML = value
+    displayColorValue(color)
 }
 
-changeBackgroundColor()
+function randomBG(){
+    let color = randomRGBColor()
+    changeBackgroundColor(color)
+}
+
+randomBG()
 
 btn.addEventListener("click", (e) => {
     e.preventDefault()
-    changeBackgroundColor()
+    randomBG()
 });
+
+RValue.addEventListener('change', () => {
+    let color = [RValue.value, GValue.value, BValue.value]
+    changeBackgroundColor(color)
+})
+
+GValue.addEventListener('change', () => {
+    let color = [RValue.value, GValue.value, BValue.value]
+    changeBackgroundColor(color)
+})
+
+BValue.addEventListener('change', () => {
+    let color = [RValue.value, GValue.value, BValue.value]
+    changeBackgroundColor(color)
+})

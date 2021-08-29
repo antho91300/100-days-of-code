@@ -11,9 +11,25 @@
 
     <h1 class="theme">My background color changer App</h1>
 
-    <h3 class="theme">Current color : <span id="color">rgb ( xxx , xxx , xxx )</span></h3>
+    <div class="theme">
+        <h3 >Current color :</h3>
+        <div>
+            <label for="r-value">R :</label>
+            <input type="range" name="r-value" id="r-value" min="0" max="255">
+        </div>
+        <div>
+            <label for="g-value">G :</label>
+            <input type="range" name="g-value" id="g-value" min="0" max="255">
+        </div>
+        
+        <div>
+            <label for="b-value">B :</label>
+            <input type="range" name="b-value" id="b-value" min="0" max="255">
+        </div>
+    </div>
 
     <a id="btn" class="theme light" href="#">Changer de couleur</a>
     <script src="./app.js"></script>
 </body>
+
 </html>
