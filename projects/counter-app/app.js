@@ -2,6 +2,9 @@ const countValue = document.getElementById('count')
 const btnUp = document.getElementById('btn-up')
 const btnDown = document.getElementById('btn-down')
 const stepInput = document.getElementById('step')
+const stepUp = document.getElementById('btn2-up')
+const stepDown = document.getElementById('btn2-down')
+const reset = document.getElementById('btn2-reset')
 let count = 0
 let step = 1
 
@@ -43,6 +46,24 @@ btnDown.addEventListener('click', (e) => {
 stepInput.addEventListener('change' , (e) => {
     e.preventDefault()
     step = parseInt(stepInput.value , 10)
+})
+
+stepUp.addEventListener('click', (e) => {
+    e.preventDefault()
+    step++
+    stepInput.value = step
+})
+
+stepDown.addEventListener('click', (e) => {
+    e.preventDefault()
+    step--
+    stepInput.value = step
+})
+
+reset.addEventListener('click', (e) => {
+    e.preventDefault()
+    step = 1
+    stepInput.value = step
 })
 
 displayCount()
