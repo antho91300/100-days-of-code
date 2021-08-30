@@ -2,18 +2,18 @@
 
 ### Jour 1: 28 Aout 2021
 
-**Progrès**: App web de changement de couleur de fond
+**Progrès**: App web de changement de couleur de fond + Compteur
+ 
 
-**Pensées**: 
-
-**Lien vers les travaux**: [bg-color-app](http://www.lien.com)
+**Lien vers les travaux**: [BacgroundColor](https://antho91300.github.io/100-days-of-code/projects/bg-color-app/bg-color-app.html) - [Counter](https://antho91300.github.io/100-days-of-code/projects/counter-app/counter-app.html) 
 
 ### Jour 1: 27 février 2016
 
-**Progrès**: 
+**Progrès**: Design du compteur + App calculatrice
 
-**Pensées**: 
+**Lien vers les travaux**: [Calculator](https://antho91300.github.io/100-days-of-code/projects/calculator/calculator.html)
 
 **Liens vers les travaux**:
-1. [nom](lien) 
-2. [nom](lien) 
+1. [BacgroundColor](https://antho91300.github.io/100-days-of-code/projects/bg-color-app/bg-color-app.html) 
+2. [Counter](https://antho91300.github.io/100-days-of-code/projects/counter-app/counter-app.html) 
+3. [Calculator](https://antho91300.github.io/100-days-of-code/projects/calculator/calculator.html) 
