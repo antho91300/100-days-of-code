@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: no-repeat url("https://picsum.photos/id/1041/2000/400?grayscale");
+  background-color: white;
+  display: grid;
+  grid-template-rows: 10vh 10vh auto 20vh;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "header"
+    "form"
+    "list"
+    "filters";
+}
+
+.header {
+  grid-area: "header";
+  margin: 1vh 5vw;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.title {
+  margin: auto;
+}
+
+.mode {
+  width: 16vw;
+  position: absolute;
+  right: 5%;
+  color: black;
+  font-size: 24px;
+}
+
+.form {
+  grid-area: "form";
+  margin: 1vh 5vw;
+  position: relative;
+}
+
+.form label::before {
+    z-index: 2;
+}
+
+input[type="text"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 10vw);
+  height: 100%;
+  padding-left: 10vw;
+  font-size: 20px;
+  border-radius: 2vw;
+  border: none;
+}
+
+.add-btn {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label::before {
+  position: absolute;
+  z-index: 2;
+  top: 2vh;
+  left: 3%;
+  font-family: "Font Awesome 5 Free";
+  content: "\f0c8";
+  font-size: 2em;
+  color: #00b7e8;
+  margin-right: 0.3rem;
+  cursor: pointer;
+}
+
+label {
+  color: #00b7e8;
+  font-weight: bold;
+  padding-left: 10vw;
+  font-size: 20px;
+}
+
+input[type="checkbox"] + label::before {
+  font-weight: normal;
+}
+
+input[type="checkbox"]:checked + label::before {
+  content: "\f14a";
+  color: #00b7e8;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
+i {
+  position: absolute;
+  right: 2vw;
+  top: 40%;
+  font-size: 24px;
+}
+
+.list {
+  grid-area: "list";
+  background-color: white;
+  border-radius: 2vw;
+  margin: 1vh 5vw;
+  box-shadow: 0 0 2vw rgba(128, 128, 128, 0.616);
+  perspective: 100px;
+}
+
+li {
+  list-style: none;
+  position: relative;
+  border-bottom: 2px solid gray;
+  height: 8vh;
+}
+
+.task {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.trash {
+  cursor: pointer;
+}
+
+.bottom {
+  grid-area: "filters";
+  background-color: white;
+  border-radius: 2vw;
+  margin: 1vh 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 0 2vw rgba(128, 128, 128, 0.616);
+}
+
+.resume {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.resume * {
+  margin: 0 2vw;
+  color: gray;
+  font-weight: bold;
+}
+
+.btn-delete {
+  background: none;
+  padding: 10px;
+  border: none;
+  color: grey;
+  text-shadow: 2px 2px 3px grey;
+  border-radius: 1vw;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  color: red;
+  text-shadow: 2px 2px 3px rgba(158, 50, 50, 0.781);
+}
+
+.filters button {
+  margin: auto;
+  background: none;
+  padding: 10px;
+  border: none;
+  box-shadow: 2px 2px 3px black;
+  border-radius: 1vw;
+  cursor: pointer;
+}
+
+.filters button.active {
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/*-- Switch Toggle Button (Copied from Stackoverflow --*/
+.switch {
+  position: relative;
+  display: inline-block;
+  height: 17px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 17px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: black;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:checked + .slider:before {
+  background-color: white;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(calc(10vw - 18px));
+}
+
+/*------ ADDED CSS ---------*/
+.slider:after {
+  content: "";
+  color: white;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after {
+  content: "";
+}
+
+/*--------- END --------*/
