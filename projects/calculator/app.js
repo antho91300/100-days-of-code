@@ -6,23 +6,22 @@ resultArea.textContent = 0;
 
 // Function to calculate result
 function calculate(num1, operator, num2) {
-  let result = "";
-  num1 = parseFloat(num1);
-  num2 = parseFloat(num2);
+  const number1 = parseFloat(num1);
+  const number2 = parseFloat(num2);
 
-  if (operator === "add") {
-    result = num1 + num2;
-  } else if (operator === "substract") {
-    result = num1 - num2;
-  } else if (operator === "multiply") {
-    result = num1 * num2;
-  } else if (operator === "divide") {
-    result = num1 / num2;
+  switch (operator) {
+    case "add":
+      return number1 + number2;
+    case "substract":
+      return number1 - number2;
+    case "multiply":
+      return number1 * number2;
+    case "divide":
+      return number1 / number2;
   }
-
-  return result;
 }
-//
+
+//Define action from button
 function checkbutton(button) {
   const action = button.dataset.action;
   const keyValue = button.textContent;
@@ -31,7 +30,8 @@ function checkbutton(button) {
   if (!action) {
     if (
       displayedResult === "0" ||
-      calculator.dataset.previousKey === "operator"
+      calculator.dataset.previousKey === "operator" ||
+      calculator.dataset.previousKey === "calculate"
     ) {
       calculator.dataset.previousKey = "";
       resultArea.textContent = keyValue;
@@ -51,7 +51,12 @@ function checkbutton(button) {
     const operator = calculator.dataset.operator;
     const secondValue = displayedResult;
 
-    if (firstValue && operator && previousKey !== "operator") {
+    if (
+      firstValue &&
+      operator &&
+      calculator.dataset.previousKey !== "operator" &&
+      calculator.dataset.previousKey !== "calculate"
+    ) {
       const calcValue = calculate(firstValue, operator, secondValue);
       resultArea.textContent = calcValue;
       calculator.dataset.firstValue = calcValue;
@@ -73,6 +78,10 @@ function checkbutton(button) {
   }
 
   if (action === "clear") {
+    resultArea.textContent = "0";
+  }
+
+  if (action === "reset") {
     delete calculator.dataset.firstValue;
     delete calculator.dataset.operator;
     delete calculator.dataset.previousKey;
@@ -84,10 +93,10 @@ function checkbutton(button) {
   if (action === "calculate") {
     let firstValue = calculator.dataset.firstValue;
     const operator = calculator.dataset.operator;
-    const secondValue = displayedResult;
+    let secondValue = displayedResult;
 
     if (firstValue) {
-      if (previousKey === "calculate") {
+      if (calculator.dataset.previousKey === "calculate") {
         firstValue = displayedResult;
         secondValue = calculator.dataset.modValue;
       }
@@ -95,11 +104,9 @@ function checkbutton(button) {
       resultArea.textContent = calculate(firstValue, operator, secondValue);
     }
 
-    calculator.dataset.firstValue = firstValue;
     calculator.dataset.modValue = secondValue;
     calculator.dataset.previousKey = "calculate";
   }
-  
 }
 
 //Get all buttons
