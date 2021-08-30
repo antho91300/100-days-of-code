@@ -7,7 +7,7 @@
 
 **Lien vers les travaux**: [BacgroundColor](https://antho91300.github.io/100-days-of-code/projects/bg-color-app/bg-color-app.html) - [Counter](https://antho91300.github.io/100-days-of-code/projects/counter-app/counter-app.html) 
 
-### Jour 1: 27 février 2016
+### Jour 2: 29 février 2016
 
 **Progrès**: Design du compteur + App calculatrice
 
