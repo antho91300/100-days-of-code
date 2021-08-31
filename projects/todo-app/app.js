@@ -4,6 +4,7 @@ const newTodoName = document.getElementById("newTodo-name");
 const deleteCompleted = document.getElementById("delete-completed");
 const leftCount = document.getElementById("leftCount");
 const modeBtn = document.getElementById("togBtn");
+const filterButtons = [...document.getElementsByClassName("filter")];
 
 let tasks = [
   { name: "Tâche exemple", completed: false },
@@ -24,11 +25,24 @@ function deletCompleted(tasks) {
   return tasks.filter((task) => !task.completed);
 }
 
-function displayTasks(tasks) {
+function displayTasks(tasks, filter = "all") {
   let remainingTasks = tasks.filter((task) => !task.completed).length;
   leftCount.textContent = remainingTasks;
   taskList.innerHTML = "";
-  tasks.forEach((task, index) => {
+  let tasksToDisplay = [];
+  switch (filter) {
+    case "all":
+      tasksToDisplay = tasks;
+      break;
+    case "active":
+      tasksToDisplay = tasks.filter((task) => !task.completed);
+      break;
+    case "completed":
+      tasksToDisplay = tasks.filter((task) => task.completed);
+      break;
+  }
+
+  tasksToDisplay.forEach((task, index) => {
     let li = document.createElement("li");
     let input = document.createElement("input");
     let label = document.createElement("label");
@@ -89,18 +103,27 @@ deleteCompleted.addEventListener("click", (e) => {
 });
 
 let mode = localStorage.getItem("mode");
-
-modeBtn.addEventListener("click", (e) => {
-  e.preventDefault()
-  mode = mode == "light" ? "dark" : "light";
-  localStorage.setItem('mode', mode);
-  document.getElementById('css-switcher').href = `./themes/${mode}.css` 
-})
-
-
-mode = mode == null ? "light" : mode
-
+mode = mode == null ? "light" : mode;
 document.getElementById("css-switcher").href = `./themes/${mode}.css`;
 
+modeBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  mode = mode == "light" ? "dark" : "light";
+  localStorage.setItem("mode", mode);
+  document.getElementById("css-switcher").href = `./themes/${mode}.css`;
+});
+
+filterButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    filterButtons.forEach((button) => {
+      if (button.classList.contains("active")) {
+        button.classList.toggle("active");
+      }
+    });
+    btn.classList.toggle("active");
+    displayTasks(tasks, btn.dataset.filter);
+  });
+});
 
 displayTasks(tasks);
