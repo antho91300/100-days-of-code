@@ -1,0 +1,52 @@
+:root {
+  --text-color: white;
+  --background-color: white;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.header {
+  color: var(--text-color);
+}
+
+input[type="text"] {
+  background-color: var(--background-color);
+}
+
+.mode {
+  background-color: black;
+  color: var(--background-color);
+}
+
+.list {
+  background-color: var(--background-color);
+}
+
+li {
+  border-bottom: 2px solid gray;
+}
+
+.bottom {
+  background-color: var(--background-color);
+  box-shadow: 0 0 2vw rgba(128, 128, 128, 0.616);
+}
+
+.resume {
+  color: gray;
+}
+
+.btn-delete {
+  color: grey;
+  text-shadow: 2px 2px 3px grey;
+}
+
+.btn-delete:hover {
+    color: red;
+    text-shadow: 2px 2px 3px rgba(158, 50, 50, 0.781);
+}
+
+.filters button.active {
+    color: #00b7e8;
+}

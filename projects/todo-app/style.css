@@ -8,7 +8,6 @@ body {
   height: 100vh;
   width: 100vw;
   background: no-repeat url("https://picsum.photos/id/1041/2000/400?grayscale");
-  background-color: white;
   display: grid;
   grid-template-rows: 10vh 10vh auto 20vh;
   grid-template-columns: 100%;
@@ -25,19 +24,30 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  color: white;
 }
 
 .title {
   margin: auto;
+  font-size: 1.5em;
+}
+
+.title a {
+  text-decoration: none;
+  color: #1f15a1;
+  font-size: 1em;
+  
 }
 
 .mode {
-  width: 16vw;
+  border-radius: 2vw;
+  padding: 5px;
   position: absolute;
   right: 5%;
-  color: black;
-  font-size: 24px;
+}
+
+.mode a {
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .form {
@@ -113,7 +123,6 @@ i {
 
 .list {
   grid-area: "list";
-  background-color: white;
   border-radius: 2vw;
   margin: 1vh 5vw;
   box-shadow: 0 0 2vw rgba(128, 128, 128, 0.616);
@@ -123,7 +132,6 @@ i {
 li {
   list-style: none;
   position: relative;
-  border-bottom: 2px solid gray;
   height: 8vh;
 }
 
@@ -140,14 +148,12 @@ li {
 
 .bottom {
   grid-area: "filters";
-  background-color: white;
   border-radius: 2vw;
   margin: 1vh 5vw;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  box-shadow: 0 0 2vw rgba(128, 128, 128, 0.616);
 }
 
 .resume {
@@ -158,7 +164,6 @@ li {
 
 .resume * {
   margin: 0 2vw;
-  color: gray;
   font-weight: bold;
 }
 
@@ -166,15 +171,8 @@ li {
   background: none;
   padding: 10px;
   border: none;
-  color: grey;
-  text-shadow: 2px 2px 3px grey;
   border-radius: 1vw;
   cursor: pointer;
-}
-
-.btn-delete:hover {
-  color: red;
-  text-shadow: 2px 2px 3px rgba(158, 50, 50, 0.781);
 }
 
 .filters button {
@@ -182,87 +180,11 @@ li {
   background: none;
   padding: 10px;
   border: none;
-  box-shadow: 2px 2px 3px black;
   border-radius: 1vw;
   cursor: pointer;
 }
 
 .filters button.active {
-  color: blue;
   font-weight: bold;
   text-decoration: underline;
 }
-
-/*-- Switch Toggle Button (Copied from Stackoverflow --*/
-.switch {
-  position: relative;
-  display: inline-block;
-  height: 17px;
-}
-
-.switch input {
-  display: none;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 17px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 13px;
-  width: 13px;
-  left: 2px;
-  bottom: 2px;
-  background-color: black;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: black;
-}
-
-input:checked + .slider:before {
-  background-color: white;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(13px);
-  -ms-transform: translateX(13px);
-  transform: translateX(calc(10vw - 18px));
-}
-
-/*------ ADDED CSS ---------*/
-.slider:after {
-  content: "";
-  color: white;
-  display: block;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  font-size: 10px;
-  font-family: Verdana, sans-serif;
-}
-
-input:checked + .slider:after {
-  content: "";
-}
-
-/*--------- END --------*/

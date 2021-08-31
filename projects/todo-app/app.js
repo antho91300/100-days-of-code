@@ -3,6 +3,7 @@ const addBtn = document.getElementById("add-btn");
 const newTodoName = document.getElementById("newTodo-name");
 const deleteCompleted = document.getElementById("delete-completed");
 const leftCount = document.getElementById("leftCount");
+const modeBtn = document.getElementById("togBtn");
 
 let tasks = [
   { name: "Tâche exemple", completed: false },
@@ -16,15 +17,15 @@ function addTask(task) {
 }
 
 function deleteTask(id) {
-    tasks.splice(id, 1);
-    displayTasks(tasks);
+  tasks.splice(id, 1);
+  displayTasks(tasks);
 }
 function deletCompleted(tasks) {
   return tasks.filter((task) => !task.completed);
 }
 
 function displayTasks(tasks) {
-  let remainingTasks = tasks.filter(task => !task.completed).length
+  let remainingTasks = tasks.filter((task) => !task.completed).length;
   leftCount.textContent = remainingTasks;
   taskList.innerHTML = "";
   tasks.forEach((task, index) => {
@@ -55,25 +56,25 @@ function displayTasks(tasks) {
       displayTasks(tasks);
     });
     icon.addEventListener("click", (e) => {
-        e.preventDefault()
-        deleteTask(e.target.dataset.id)
-    })
+      e.preventDefault();
+      deleteTask(e.target.dataset.id);
+    });
   });
 }
 
 function getNewTask() {
-    const task = {
-        name: newTodoName.value,
-        completed: false,
-      };
-      addTask(task);
-      newTodoName.value = "";
+  const task = {
+    name: newTodoName.value,
+    completed: false,
+  };
+  addTask(task);
+  newTodoName.value = "";
 }
 
-document.addEventListener('keyup', function (e) {
-    if (e.key === 'Enter' || e.keyCode === 13) {
-        getNewTask();
-    }
+document.addEventListener("keyup", function (e) {
+  if (e.key === "Enter" || e.keyCode === 13) {
+    getNewTask();
+  }
 });
 
 addBtn.addEventListener("click", (e) => {
@@ -86,5 +87,20 @@ deleteCompleted.addEventListener("click", (e) => {
   tasks = deletCompleted(tasks);
   displayTasks(tasks);
 });
+
+let mode = localStorage.getItem("mode");
+
+modeBtn.addEventListener("click", (e) => {
+  e.preventDefault()
+  mode = mode == "light" ? "dark" : "light";
+  localStorage.setItem('mode', mode);
+  document.getElementById('css-switcher').href = `./themes/${mode}.css` 
+})
+
+
+mode = mode == null ? "light" : mode
+
+document.getElementById("css-switcher").href = `./themes/${mode}.css`;
+
 
 displayTasks(tasks);
