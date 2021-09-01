@@ -6,23 +6,51 @@ const leftCount = document.getElementById("leftCount");
 const modeBtn = document.getElementById("togBtn");
 const filterButtons = [...document.getElementsByClassName("filter")];
 
-let tasks = [
-  { name: "Tâche exemple", completed: false },
-  { name: "Tâche terminée", completed: true },
-];
+import { firebaseConfig } from "./firestore.js";
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const todosDB = db.collection("todos");
+
+let tasks = [];
 let filteredTasks = [];
 
 function addTask(task) {
-  tasks.push(task);
-  displayTasks(tasks);
+  todosDB.add(task);
+  getToDos();
+}
+
+function updateTask(task) {
+  todosDB.doc(task.id).update(task);
+  getToDos();
 }
 
 function deleteTask(id) {
-  tasks.splice(id, 1);
-  displayTasks(tasks);
+  todosDB
+    .doc(id)
+    .delete()
+    .then(() => {
+      console.log("Document successfully deleted!");
+      getToDos();
+    })
+    .catch((error) => {
+      console.error("Error removing document: ", error);
+    });
 }
+
 function deletCompleted(tasks) {
-  return tasks.filter((task) => !task.completed);
+  todosDB
+    .where("completed", "==", true)
+    .get()
+    .then((snapshot) => {
+      const data = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      let tasksToDelete = [...data];
+      tasksToDelete.forEach((task) => {
+        deleteTask(task.id);
+      });
+    });
 }
 
 function displayTasks(tasks, filter = "all") {
@@ -49,12 +77,12 @@ function displayTasks(tasks, filter = "all") {
     let icon = document.createElement("i");
 
     icon.classList.add("far", "fa-trash-alt", "trash");
-    icon.dataset.id = index;
-    label.htmlFor = `${index}`;
+    icon.dataset.id = task.id;
+    label.htmlFor = task.id;
     label.textContent = task.name;
     input.setAttribute("type", "checkbox");
     input.name = task.name;
-    input.setAttribute("id", `${index}`);
+    input.setAttribute("id", `${task.id}`);
     if (task.completed) {
       input.value = 1;
       input.setAttribute("checked", true);
@@ -67,7 +95,7 @@ function displayTasks(tasks, filter = "all") {
     taskList.appendChild(li);
     input.addEventListener("change", () => {
       task.completed = !task.completed;
-      displayTasks(tasks);
+      updateTask(task);
     });
     icon.addEventListener("click", (e) => {
       e.preventDefault();
@@ -98,8 +126,7 @@ addBtn.addEventListener("click", (e) => {
 
 deleteCompleted.addEventListener("click", (e) => {
   e.preventDefault();
-  tasks = deletCompleted(tasks);
-  displayTasks(tasks);
+  deletCompleted();
 });
 
 let mode = localStorage.getItem("mode");
@@ -126,4 +153,15 @@ filterButtons.forEach((btn) => {
   });
 });
 
-displayTasks(tasks);
+function getToDos(filter = "all") {
+  todosDB.get().then((snapshot) => {
+    const data = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    tasks = [...data];
+    displayTasks(tasks, filter);
+  });
+}
+
+getToDos();
