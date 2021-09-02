@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("./patrick-tomasso-QMDap1TAu0g-unsplash (1).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 40vh;
+    background-color: #3c7b9bd2;
+    border-radius: 5vh;
+    box-shadow: 0px 0px 2vw rgb(49, 49, 49);
+}
+
+h1 {
+    margin-bottom: 5vh;
+    font-size: 4em;
+    color: #400068;
+    text-shadow: 0 0 1vh #fff;
+}
+
+.form {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    height: 4vh;
+    width: 70%;
+    margin: 2vh auto;
+    box-shadow: 0px 0px 1vw rgb(49, 49, 49);
+    border: none;
+    font-size: 1.2em;
+}
+
+p#errorMessage {
+    color: rgb(255, 115, 0);
+    text-shadow: 0 0 0.2vw rgb(49, 49, 49);
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: auto;
+}
+
+button {
+    background-color:limegreen ;
+    border: none;
+    box-shadow: 0px 0px 1vw #400068;
+    border-radius: 2vh;
+    width: 50%;
+    margin: 2vh auto;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #400068;
+    padding: 1.2vh;
+}

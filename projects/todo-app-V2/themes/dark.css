@@ -1,0 +1,66 @@
+:root {
+  --text-color: rgb(97, 97, 97);
+  --background-color: rgb(14, 11, 31);
+  --background-secondary-color: rgb(28, 25, 48);
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.header {
+  color: var(--text-color);
+}
+
+.title {
+  text-shadow: 2px 2px 2px var(--background-color);
+}
+
+input[type="text"] {
+  background-color: var(--background-secondary-color);
+  color: var(--text-color);
+}
+
+.mode {
+  background-color: white;
+  color: black;
+}
+
+.list {
+  background-color: var(--background-secondary-color);
+}
+
+li {
+  border-bottom: 2px solid gray;
+}
+
+.trash {
+    color: var(--text-color);
+  }
+
+.bottom {
+  background-color: var(--background-secondary-color);
+  box-shadow: 0 0 2vw rgba(128, 128, 128, 0.616);
+}
+
+.resume {
+  color: gray;
+}
+
+.btn-delete {
+  color: grey;
+  text-shadow: 2px 2px 3px rgb(73, 70, 70);
+}
+
+.btn-delete:hover {
+  color: red;
+  text-shadow: 2px 2px 3px rgba(209, 67, 67, 0.781);
+}
+
+.filters button {
+  color: var(--text-color);
+}
+
+.filters button.active {
+  color: #00b7e8;
+}
