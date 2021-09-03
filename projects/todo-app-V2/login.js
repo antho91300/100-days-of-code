@@ -3,8 +3,9 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const loginBtn = document.getElementById("loginBtn");
 const errorMessage = document.getElementById("errorMessage");
+const error = localStorage.getItem("errorMessage");
 
-import { auth , login , logout } from "./connect.js";
+import { auth, login, logout } from "./connect.js";
 
 loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -14,3 +15,8 @@ loginBtn.addEventListener("click", (e) => {
     login(email.value, password.value);
   }
 });
+
+if (error != undefined) {
+  errorMessage.innerText = error;
+  localStorage.removeItem("errorMessage");
+}

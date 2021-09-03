@@ -18,10 +18,12 @@ export function login(email, password) {
   auth
     .signInWithEmailAndPassword(email, password)
     .then(() => {
+      localStorage.removeItem("errorMessage");
       window.location.replace("./todo-app.html");
     })
     .catch(function (err) {
-      localStorage(errorMessage, "Identifiants incorrects !");
+      localStorage.setItem("errorMessage", "Identifiants incorrects !");
+      window.location.reload();
     });
 }
 

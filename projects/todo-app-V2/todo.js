@@ -108,25 +108,54 @@ function displayTodo(todo) {
     };
     updateTodo(updatedTodo);
   });
-  label.addEventListener("dblclick", (e) => {});
+  li.addEventListener("dblclick", (e) => {
+    const modal = document.getElementById("myModal");
+    const cancel = document.getElementById("cancel");
+    const save = document.getElementById("save");
+    const field = document.getElementById("editTask-name");
+
+    field.value = input.name;
+    modal.style.display = "block";
+    field.focus();
+
+    cancel.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+
+    save.onclick = function (event) {
+      const todoEdited = {
+        id: todo.id,
+        name: field.value,
+      };
+      updateTodo(todoEdited);
+      modal.style.display = "none";
+    };
+
+    document.addEventListener("keyup", function (e) {
+      if (e.key === "Enter" || e.keyCode === 13) {
+        if (document.activeElement.id == "editTask-name") {
+          const todoEdited = {
+            id: todo.id,
+            name: field.value,
+          };
+          updateTodo(todoEdited);
+          modal.style.display = "none";
+        }
+      }
+    });
+  });
   return li;
 }
 
 logoutBtn.addEventListener("click", (e) => {
   e.preventDefault();
   logout();
-});
-
-document.addEventListener("keyup", function (e) {
-  if (e.key === "Enter" || e.keyCode === 13) {
-    const newTodo = document.getElementById("newTodo-name");
-    const todo = {
-      name: newTodo.value,
-      completed: false,
-    };
-    addTodo(todo);
-    newTodo.value = "";
-  }
 });
 
 addBtn.addEventListener("click", (e) => {
@@ -138,6 +167,20 @@ addBtn.addEventListener("click", (e) => {
   };
   addTodo(todo);
   newTodo.value = "";
+});
+
+document.addEventListener("keyup", function (e) {
+  if (e.key === "Enter" || e.keyCode === 13) {
+    if (document.activeElement.id == "newTodo-name") {
+      const newTodo = document.getElementById("newTodo-name");
+      const todo = {
+        name: newTodo.value,
+        completed: false,
+      };
+      addTodo(todo);
+      newTodo.value = "";
+    }
+  }
 });
 
 deleteCompleted.addEventListener("click", (e) => {
