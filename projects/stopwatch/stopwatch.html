@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#100DaysOfCode #7 Chronemètre</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Mon chronomètre</h1>
+        <a href="../../index.html">Accueil</a>
+    </header>
+    <div class="container">
+        <div class="chrono">
+            <div class=" display hour">
+                <span id="hour">00</span>
+                <div class="label">Hour</div>
+            </div>
+            <div class=" display minute">
+                <span id="minute">00</span>
+                <div class="label">Min</div>
+            </div>
+            <div class=" display seconds">
+                <span id="second">00</span>
+                <div class="label">Sec</div>
+            </div>
+            <div class=" display millis">
+                <span id="milli">00</span>
+                <div class="label">Ms</div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="btn start" data-action="start">Start</button>
+            <button class="btn save" data-action="save">Save current</button>
+            <button class="btn pause" data-action="pause">Pause</button>
+            <button class="btn reset" data-action="reset">Reset</button>
+        </div>
+        <ol class="last-times">
+            
+        </ol>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

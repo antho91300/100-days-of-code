@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: paleturquoise;
+}
+
+header {
+    margin-bottom: 5vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+}
+
+.chrono {
+    display: flex;
+}
+
+.display {
+    margin: 1vw;
+    height: 20vw;
+    width: 20vw;
+    background-color: seagreen;
+    position: relative;
+    border-radius: 2vh;
+}
+
+.display span {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 14vw;
+    text-align: center;
+    line-height: 14vw;
+    font-size: 3.5em;
+    font-weight: bold;
+    color: white;
+    border-radius: 2vh 2vh 0 0;
+
+}
+
+.label {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6vw;
+    text-align: center;
+    line-height: 6vw;
+    font-size: 1.7em;
+    font-weight: bold;
+    color: white;
+    background-color: orange;
+    border-radius: 0 0 2vh 2vh;
+}
+
+.actions {
+    margin-top: 3vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn {
+    padding: 1.5vh;
+    border: none;
+    border-radius: 2vh;
+    box-shadow: 0 0 1vh grey;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+}
+
+.btn:active {
+    box-shadow: none;
+}
+
+.start {
+    background-color: green;
+}
+
+.save {
+    background-color: transparent;
+    border: 1px solid green;
+    box-shadow: 0 0 1vh green;
+    color: green;
+}
+
+.pause {
+    background-color: orange;
+}
+
+.reset {
+    background-color: orangered;
+}
+
+.last-times {
+    margin-top: 4vh;
+    padding: 2vh;
+    border-radius: 2vw;
+    font-size: 1.5em;
+    background-color: thistle;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 20vh;
+}
+
+li {
+    margin-left: 3vh;
+}

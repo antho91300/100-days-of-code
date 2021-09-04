@@ -11458,14 +11458,18 @@ html {
   top: 0;
   left: 0;
   transition: all 0.2s ease-in-out;
-  opacity: 0;
-  background-color: rgba(26, 188, 156, 0.9);
+  opacity: 1;
+  background-color: rgba(128, 128, 128, 0.219);
 }
+
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
+  background-color: rgba(26, 188, 156, 0.9);
 }
+
 .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
   font-size: 1.5rem;
+  text-shadow: 0 0 3px black;
 }
 
 .portfolio-modal .btn-close {
